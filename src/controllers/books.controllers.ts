@@ -7,7 +7,7 @@ interface IBooksControllers{
     getOneBook(req: Request, res: Response): Response;
     deleteBook(req: Request, res: Response): Response;
     updateBook(req: Request, res: Response): Response;
-}
+};
 
 export class BooksControllers implements IBooksControllers{
     createBook(req: Request, res: Response): Response{
@@ -42,5 +42,5 @@ export class BooksControllers implements IBooksControllers{
         const updateBook = bookServices.updateBook(req.body, req.params.id);
 
         return res.status(200).json(updateBook);
-    }
-}
+    };
+};

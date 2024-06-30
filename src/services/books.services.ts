@@ -53,4 +53,4 @@ export class BookServices implements IBookServices{
 
         return newBook;
     };
-}
+};

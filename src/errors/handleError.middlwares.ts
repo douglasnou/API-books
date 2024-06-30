@@ -6,9 +6,9 @@ export class HandleErrors{
         if(err instanceof AppError){
             res.status(err.statusCode).json({error: err.message});
         } else {
-            console.log(err)
-            return res.status(505).json({message: "internal server error!"})
-        }
-        next()
-    }
-}
+            console.log(err);
+            return res.status(505).json({message: "internal server error!"});
+        };
+        next();
+    };
+};
