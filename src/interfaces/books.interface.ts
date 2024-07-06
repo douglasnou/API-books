@@ -1,3 +1,5 @@
+import { AnyZodObject } from "zod";
+
 export interface IBook{
     id: number;
     name: string;
@@ -9,3 +11,9 @@ export interface IBook{
 
 export type TCreateBook = Omit<IBook, "id" | "createdAt" | "updatedAt">;
 export type TUpdatedBook = Partial<TCreateBook>;
+
+export interface IRequestSchemas{
+    params?: AnyZodObject;
+    body?: AnyZodObject;
+    query?: AnyZodObject;
+}

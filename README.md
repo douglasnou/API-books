@@ -1,9 +1,14 @@
-### API de livros
+### Entrega M4 - API de livros
+Ao clonar, rode o comando npm install para instalar as dependências
 
-| Tipo | Endereço | Descrição |
-| :---         |     :---:      |          ---: |
-| POST   | /books/    | Rota de criação de livros    |
-| GET     | /books/       | Rota de leitura de livros     |
-| GET   | /books/:id     | Rota de leitura individual de livros    |
-| PATCH     | /books/:id       | Rota de atualização livros      |
-| DELETE   | /books/:id     | Rota de exclusão de livros    |
+Você poderá iniciar a aplicação rodando o comando:
+
+```
+npm run dev
+```
+
+Você poderá rodar os testes automáticos preparádos para essa aplicação rodando o comando:
+
+```
+npm run test
+```

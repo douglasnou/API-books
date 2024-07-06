@@ -18,7 +18,8 @@ export class BooksControllers implements IBooksControllers{
 
     getBooks(req: Request, res: Response): Response{
         const bookServices = new BookServices();
-        const getBooks = bookServices.getBooks();
+        const { search } = req.query;
+;        const getBooks = bookServices.getBooks(search as string);
 
         return res.status(200).json(getBooks);
     };

@@ -3,7 +3,7 @@ import { IBook, TCreateBook, TUpdatedBook } from "../interfaces/books.interface"
 
 interface IBookServices{
     createBook(body: TCreateBook): IBook;
-    getBooks(): IBook[];
+    getBooks(search?:string): IBook[];
     getOneBook(id:string): IBook;
     deleteBook(id:string): void;
     updateBook(body: TUpdatedBook, id:string): IBook;
@@ -27,9 +27,13 @@ export class BookServices implements IBookServices{
       return newBook;
     };
 
-    getBooks(): IBook[] {
+    getBooks(search:string): IBook[] {
+        const filteredBooks = booksDatabase.filter((book) => {
+            const searchRule = search ? book.name.toLowerCase().includes(search.toLowerCase()) : true;
+            return searchRule;
+        });
 
-        return booksDatabase;
+        return filteredBooks;
     };
 
     getOneBook(id: string): IBook {
